@@ -1,0 +1,644 @@
+{
+  "id": "A7",
+  "category": "aggregate",
+  "repeat": 1,
+  "question": "How many open at-risk orders are already overdue?",
+  "as_of": "2016-06-30",
+  "model": "deepseek-chat",
+  "answer": "As of 2016-06-30, of the 50 open at-risk orders, **23 are already overdue** (promised dates on or before 2016-06-30). The other 27 have promised dates of 2016-07-01 or 2016-07-02 and are not yet overdue.",
+  "stop": "final_answer",
+  "tool_calls": [
+    {
+      "name": "list_at_risk_orders",
+      "arguments": {
+        "as_of": "2016-06-30"
+      },
+      "duration_ms": 24.4,
+      "ok": true,
+      "error_code": null,
+      "executed": true
+    },
+    {
+      "name": "list_at_risk_orders",
+      "arguments": {
+        "limit": 50,
+        "as_of": "2016-06-30"
+      },
+      "duration_ms": 23.2,
+      "ok": true,
+      "error_code": null,
+      "executed": true
+    }
+  ],
+  "tool_results": [
+    {
+      "ok": true,
+      "as_of": "2016-06-30",
+      "data": {
+        "orders": [
+          {
+            "order_id": 37065,
+            "order_date": "2016-06-25",
+            "promised_date": "2016-06-27",
+            "shipping_mode": "Second Class",
+            "state": "Massachusetts",
+            "overdue": true
+          },
+          {
+            "order_id": 37150,
+            "order_date": "2016-06-26",
+            "promised_date": "2016-06-28",
+            "shipping_mode": "Second Class",
+            "state": "Virginia",
+            "overdue": true
+          },
+          {
+            "order_id": 37175,
+            "order_date": "2016-06-26",
+            "promised_date": "2016-06-28",
+            "shipping_mode": "Second Class",
+            "state": "Massachusetts",
+            "overdue": true
+          },
+          {
+            "order_id": 37180,
+            "order_date": "2016-06-26",
+            "promised_date": "2016-06-28",
+            "shipping_mode": "Second Class",
+            "state": "California",
+            "overdue": true
+          },
+          {
+            "order_id": 37189,
+            "order_date": "2016-06-26",
+            "promised_date": "2016-06-28",
+            "shipping_mode": "Second Class",
+            "state": "Illinois",
+            "overdue": true
+          },
+          {
+            "order_id": 37190,
+            "order_date": "2016-06-26",
+            "promised_date": "2016-06-28",
+            "shipping_mode": "Second Class",
+            "state": "Georgia",
+            "overdue": true
+          },
+          {
+            "order_id": 37204,
+            "order_date": "2016-06-27",
+            "promised_date": "2016-06-29",
+            "shipping_mode": "Second Class",
+            "state": "California",
+            "overdue": true
+          },
+          {
+            "order_id": 37218,
+            "order_date": "2016-06-27",
+            "promised_date": "2016-06-29",
+            "shipping_mode": "Second Class",
+            "state": "New York",
+            "overdue": true
+          },
+          {
+            "order_id": 37220,
+            "order_date": "2016-06-27",
+            "promised_date": "2016-06-29",
+            "shipping_mode": "Second Class",
+            "state": "New York",
+            "overdue": true
+          },
+          {
+            "order_id": 37233,
+            "order_date": "2016-06-27",
+            "promised_date": "2016-06-29",
+            "shipping_mode": "Second Class",
+            "state": "Washington",
+            "overdue": true
+          },
+          {
+            "order_id": 37235,
+            "order_date": "2016-06-27",
+            "promised_date": "2016-06-29",
+            "shipping_mode": "Second Class",
+            "state": "Texas",
+            "overdue": true
+          },
+          {
+            "order_id": 37268,
+            "order_date": "2016-06-28",
+            "promised_date": "2016-06-30",
+            "shipping_mode": "Second Class",
+            "state": "California",
+            "overdue": true
+          },
+          {
+            "order_id": 37269,
+            "order_date": "2016-06-28",
+            "promised_date": "2016-06-30",
+            "shipping_mode": "Second Class",
+            "state": "New York",
+            "overdue": true
+          },
+          {
+            "order_id": 37274,
+            "order_date": "2016-06-28",
+            "promised_date": "2016-06-30",
+            "shipping_mode": "Second Class",
+            "state": "Arizona",
+            "overdue": true
+          },
+          {
+            "order_id": 37275,
+            "order_date": "2016-06-28",
+            "promised_date": "2016-06-30",
+            "shipping_mode": "Second Class",
+            "state": "Oklahoma",
+            "overdue": true
+          },
+          {
+            "order_id": 37277,
+            "order_date": "2016-06-28",
+            "promised_date": "2016-06-30",
+            "shipping_mode": "Second Class",
+            "state": "Oklahoma",
+            "overdue": true
+          },
+          {
+            "order_id": 37284,
+            "order_date": "2016-06-28",
+            "promised_date": "2016-06-30",
+            "shipping_mode": "Second Class",
+            "state": "Mississippi",
+            "overdue": true
+          },
+          {
+            "order_id": 37285,
+            "order_date": "2016-06-28",
+            "promised_date": "2016-06-30",
+            "shipping_mode": "Second Class",
+            "state": "Mississippi",
+            "overdue": true
+          },
+          {
+            "order_id": 37327,
+            "order_date": "2016-06-28",
+            "promised_date": "2016-06-30",
+            "shipping_mode": "Second Class",
+            "state": "Florida",
+            "overdue": true
+          },
+          {
+            "order_id": 37330,
+            "order_date": "2016-06-28",
+            "promised_date": "2016-06-30",
+            "shipping_mode": "Second Class",
+            "state": "California",
+            "overdue": true
+          }
+        ],
+        "returned": 20,
+        "total_matching": 50,
+        "truncated": true
+      }
+    },
+    {
+      "ok": true,
+      "as_of": "2016-06-30",
+      "data": {
+        "orders": [
+          {
+            "order_id": 37065,
+            "order_date": "2016-06-25",
+            "promised_date": "2016-06-27",
+            "shipping_mode": "Second Class",
+            "state": "Massachusetts",
+            "overdue": true
+          },
+          {
+            "order_id": 37150,
+            "order_date": "2016-06-26",
+            "promised_date": "2016-06-28",
+            "shipping_mode": "Second Class",
+            "state": "Virginia",
+            "overdue": true
+          },
+          {
+            "order_id": 37175,
+            "order_date": "2016-06-26",
+            "promised_date": "2016-06-28",
+            "shipping_mode": "Second Class",
+            "state": "Massachusetts",
+            "overdue": true
+          },
+          {
+            "order_id": 37180,
+            "order_date": "2016-06-26",
+            "promised_date": "2016-06-28",
+            "shipping_mode": "Second Class",
+            "state": "California",
+            "overdue": true
+          },
+          {
+            "order_id": 37189,
+            "order_date": "2016-06-26",
+            "promised_date": "2016-06-28",
+            "shipping_mode": "Second Class",
+            "state": "Illinois",
+            "overdue": true
+          },
+          {
+            "order_id": 37190,
+            "order_date": "2016-06-26",
+            "promised_date": "2016-06-28",
+            "shipping_mode": "Second Class",
+            "state": "Georgia",
+            "overdue": true
+          },
+          {
+            "order_id": 37204,
+            "order_date": "2016-06-27",
+            "promised_date": "2016-06-29",
+            "shipping_mode": "Second Class",
+            "state": "California",
+            "overdue": true
+          },
+          {
+            "order_id": 37218,
+            "order_date": "2016-06-27",
+            "promised_date": "2016-06-29",
+            "shipping_mode": "Second Class",
+            "state": "New York",
+            "overdue": true
+          },
+          {
+            "order_id": 37220,
+            "order_date": "2016-06-27",
+            "promised_date": "2016-06-29",
+            "shipping_mode": "Second Class",
+            "state": "New York",
+            "overdue": true
+          },
+          {
+            "order_id": 37233,
+            "order_date": "2016-06-27",
+            "promised_date": "2016-06-29",
+            "shipping_mode": "Second Class",
+            "state": "Washington",
+            "overdue": true
+          },
+          {
+            "order_id": 37235,
+            "order_date": "2016-06-27",
+            "promised_date": "2016-06-29",
+            "shipping_mode": "Second Class",
+            "state": "Texas",
+            "overdue": true
+          },
+          {
+            "order_id": 37268,
+            "order_date": "2016-06-28",
+            "promised_date": "2016-06-30",
+            "shipping_mode": "Second Class",
+            "state": "California",
+            "overdue": true
+          },
+          {
+            "order_id": 37269,
+            "order_date": "2016-06-28",
+            "promised_date": "2016-06-30",
+            "shipping_mode": "Second Class",
+            "state": "New York",
+            "overdue": true
+          },
+          {
+            "order_id": 37274,
+            "order_date": "2016-06-28",
+            "promised_date": "2016-06-30",
+            "shipping_mode": "Second Class",
+            "state": "Arizona",
+            "overdue": true
+          },
+          {
+            "order_id": 37275,
+            "order_date": "2016-06-28",
+            "promised_date": "2016-06-30",
+            "shipping_mode": "Second Class",
+            "state": "Oklahoma",
+            "overdue": true
+          },
+          {
+            "order_id": 37277,
+            "order_date": "2016-06-28",
+            "promised_date": "2016-06-30",
+            "shipping_mode": "Second Class",
+            "state": "Oklahoma",
+            "overdue": true
+          },
+          {
+            "order_id": 37284,
+            "order_date": "2016-06-28",
+            "promised_date": "2016-06-30",
+            "shipping_mode": "Second Class",
+            "state": "Mississippi",
+            "overdue": true
+          },
+          {
+            "order_id": 37285,
+            "order_date": "2016-06-28",
+            "promised_date": "2016-06-30",
+            "shipping_mode": "Second Class",
+            "state": "Mississippi",
+            "overdue": true
+          },
+          {
+            "order_id": 37327,
+            "order_date": "2016-06-28",
+            "promised_date": "2016-06-30",
+            "shipping_mode": "Second Class",
+            "state": "Florida",
+            "overdue": true
+          },
+          {
+            "order_id": 37330,
+            "order_date": "2016-06-28",
+            "promised_date": "2016-06-30",
+            "shipping_mode": "Second Class",
+            "state": "California",
+            "overdue": true
+          },
+          {
+            "order_id": 37333,
+            "order_date": "2016-06-28",
+            "promised_date": "2016-06-30",
+            "shipping_mode": "Second Class",
+            "state": "Kentucky",
+            "overdue": true
+          },
+          {
+            "order_id": 37334,
+            "order_date": "2016-06-28",
+            "promised_date": "2016-06-30",
+            "shipping_mode": "Second Class",
+            "state": "Kentucky",
+            "overdue": true
+          },
+          {
+            "order_id": 37390,
+            "order_date": "2016-06-29",
+            "promised_date": "2016-06-30",
+            "shipping_mode": "First Class",
+            "state": "New York",
+            "overdue": true
+          },
+          {
+            "order_id": 37391,
+            "order_date": "2016-06-29",
+            "promised_date": "2016-06-30",
+            "shipping_mode": "First Class",
+            "state": "New York",
+            "overdue": true
+          },
+          {
+            "order_id": 37392,
+            "order_date": "2016-06-29",
+            "promised_date": "2016-06-30",
+            "shipping_mode": "First Class",
+            "state": "New York",
+            "overdue": true
+          },
+          {
+            "order_id": 37337,
+            "order_date": "2016-06-29",
+            "promised_date": "2016-07-01",
+            "shipping_mode": "Second Class",
+            "state": "California",
+            "overdue": false
+          },
+          {
+            "order_id": 37342,
+            "order_date": "2016-06-29",
+            "promised_date": "2016-07-01",
+            "shipping_mode": "Second Class",
+            "state": "Arizona",
+            "overdue": false
+          },
+          {
+            "order_id": 37343,
+            "order_date": "2016-06-29",
+            "promised_date": "2016-07-01",
+            "shipping_mode": "Second Class",
+            "state": "Minnesota",
+            "overdue": false
+          },
+          {
+            "order_id": 37344,
+            "order_date": "2016-06-29",
+            "promised_date": "2016-07-01",
+            "shipping_mode": "Second Class",
+            "state": "Florida",
+            "overdue": false
+          },
+          {
+            "order_id": 37346,
+            "order_date": "2016-06-29",
+            "promised_date": "2016-07-01",
+            "shipping_mode": "Second Class",
+            "state": "Texas",
+            "overdue": false
+          },
+          {
+            "order_id": 37401,
+            "order_date": "2016-06-29",
+            "promised_date": "2016-07-01",
+            "shipping_mode": "Second Class",
+            "state": "Pennsylvania",
+            "overdue": false
+          },
+          {
+            "order_id": 37402,
+            "order_date": "2016-06-29",
+            "promised_date": "2016-07-01",
+            "shipping_mode": "Second Class",
+            "state": "Florida",
+            "overdue": false
+          },
+          {
+            "order_id": 37410,
+            "order_date": "2016-06-30",
+            "promised_date": "2016-07-01",
+            "shipping_mode": "First Class",
+            "state": "Ohio",
+            "overdue": false
+          },
+          {
+            "order_id": 37425,
+            "order_date": "2016-06-30",
+            "promised_date": "2016-07-01",
+            "shipping_mode": "First Class",
+            "state": "California",
+            "overdue": false
+          },
+          {
+            "order_id": 37426,
+            "order_date": "2016-06-30",
+            "promised_date": "2016-07-01",
+            "shipping_mode": "First Class",
+            "state": "Virginia",
+            "overdue": false
+          },
+          {
+            "order_id": 37427,
+            "order_date": "2016-06-30",
+            "promised_date": "2016-07-01",
+            "shipping_mode": "First Class",
+            "state": "Virginia",
+            "overdue": false
+          },
+          {
+            "order_id": 37428,
+            "order_date": "2016-06-30",
+            "promised_date": "2016-07-01",
+            "shipping_mode": "First Class",
+            "state": "New York",
+            "overdue": false
+          },
+          {
+            "order_id": 37448,
+            "order_date": "2016-06-30",
+            "promised_date": "2016-07-01",
+            "shipping_mode": "First Class",
+            "state": "California",
+            "overdue": false
+          },
+          {
+            "order_id": 37408,
+            "order_date": "2016-06-30",
+            "promised_date": "2016-07-02",
+            "shipping_mode": "Second Class",
+            "state": "Ohio",
+            "overdue": false
+          },
+          {
+            "order_id": 37411,
+            "order_date": "2016-06-30",
+            "promised_date": "2016-07-02",
+            "shipping_mode": "Second Class",
+            "state": "Ohio",
+            "overdue": false
+          },
+          {
+            "order_id": 37414,
+            "order_date": "2016-06-30",
+            "promised_date": "2016-07-02",
+            "shipping_mode": "Second Class",
+            "state": "New York",
+            "overdue": false
+          },
+          {
+            "order_id": 37416,
+            "order_date": "2016-06-30",
+            "promised_date": "2016-07-02",
+            "shipping_mode": "Second Class",
+            "state": "Oregon",
+            "overdue": false
+          },
+          {
+            "order_id": 37449,
+            "order_date": "2016-06-30",
+            "promised_date": "2016-07-02",
+            "shipping_mode": "Second Class",
+            "state": "California",
+            "overdue": false
+          },
+          {
+            "order_id": 37450,
+            "order_date": "2016-06-30",
+            "promised_date": "2016-07-02",
+            "shipping_mode": "Second Class",
+            "state": "Pennsylvania",
+            "overdue": false
+          },
+          {
+            "order_id": 37456,
+            "order_date": "2016-06-30",
+            "promised_date": "2016-07-02",
+            "shipping_mode": "Second Class",
+            "state": "California",
+            "overdue": false
+          },
+          {
+            "order_id": 37458,
+            "order_date": "2016-06-30",
+            "promised_date": "2016-07-02",
+            "shipping_mode": "Second Class",
+            "state": "Florida",
+            "overdue": false
+          },
+          {
+            "order_id": 37459,
+            "order_date": "2016-06-30",
+            "promised_date": "2016-07-02",
+            "shipping_mode": "Second Class",
+            "state": "Florida",
+            "overdue": false
+          },
+          {
+            "order_id": 37460,
+            "order_date": "2016-06-30",
+            "promised_date": "2016-07-02",
+            "shipping_mode": "Second Class",
+            "state": "Florida",
+            "overdue": false
+          },
+          {
+            "order_id": 37461,
+            "order_date": "2016-06-30",
+            "promised_date": "2016-07-02",
+            "shipping_mode": "Second Class",
+            "state": "Florida",
+            "overdue": false
+          },
+          {
+            "order_id": 37464,
+            "order_date": "2016-06-30",
+            "promised_date": "2016-07-02",
+            "shipping_mode": "Second Class",
+            "state": "Texas",
+            "overdue": false
+          }
+        ],
+        "returned": 50,
+        "total_matching": 50,
+        "truncated": false
+      }
+    }
+  ],
+  "input_tokens": 9495,
+  "output_tokens": 160,
+  "duration_s": 2.943,
+  "cost_usd": 0.002726,
+  "passed": false,
+  "checks": [
+    {
+      "name": "numbers",
+      "passed": false,
+      "detail": "missing open_at_risk=25"
+    },
+    {
+      "name": "forbidden",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "tool_trace",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_leak",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

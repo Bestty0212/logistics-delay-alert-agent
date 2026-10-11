@@ -1,0 +1,5 @@
+pandas>=2.2
+psycopg[binary]>=3.2
+pytest>=8.0
+anthropic==1.13.0
+openai==3.28.0

@@ -1,0 +1,39 @@
+{
+  "id": "T6",
+  "category": "trap",
+  "repeat": 1,
+  "question": "Which orders are at risk as of 2016-12-01?",
+  "as_of": "2016-08-31",
+  "model": "deepseek-chat",
+  "answer": "I can't answer that. The current date for this conversation is 2016-08-31, and I can't retrieve data for a later date like 2016-12-01.\n\nIf you'd like, I can list at-risk orders as of 2016-08-31, or for any earlier date.",
+  "stop": "final_answer",
+  "tool_calls": [],
+  "tool_results": [],
+  "input_tokens": 1434,
+  "output_tokens": 67,
+  "duration_s": 0.981,
+  "cost_usd": 0.00043,
+  "passed": true,
+  "checks": [
+    {
+      "name": "required",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "forbidden",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "tool_trace",
+      "passed": true,
+      "detail": "no tool called (allowed)"
+    },
+    {
+      "name": "no_leak",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

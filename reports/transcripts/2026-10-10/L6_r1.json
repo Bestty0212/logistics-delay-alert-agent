@@ -1,0 +1,71 @@
+{
+  "id": "L6",
+  "category": "lookup",
+  "repeat": 1,
+  "question": "Draft a customer notification for order 37337.",
+  "as_of": "2016-06-30",
+  "model": "deepseek-chat",
+  "answer": "Here's a draft notification for order 37337 (as of 2016-06-30). It has **not** been sent.\n\n> Hello, this is a heads-up about your order 37337, shipped with Second Class and planned for 2016-07-01. Delivery may take longer than planned. We will keep you informed. Thank you for your patience.\n\nIt's a draft only — review before sending.",
+  "stop": "final_answer",
+  "tool_calls": [
+    {
+      "name": "draft_notification",
+      "arguments": {
+        "order_id": 37337,
+        "as_of": "2016-06-30"
+      },
+      "duration_ms": 32.4,
+      "ok": true,
+      "error_code": null,
+      "executed": true
+    }
+  ],
+  "tool_results": [
+    {
+      "ok": true,
+      "as_of": "2016-06-30",
+      "data": {
+        "draft": "Hello, this is a heads-up about your order 37337, shipped with Second Class and planned for 2016-07-01. Delivery may take longer than planned. We will keep you informed. Thank you for your patience.",
+        "sent": false,
+        "facts_used": {
+          "order_id": 37337,
+          "promised_date": "2016-07-01",
+          "shipping_mode": "Second Class",
+          "variant": "at_risk"
+        }
+      }
+    }
+  ],
+  "input_tokens": 3045,
+  "output_tokens": 139,
+  "duration_s": 1.687,
+  "cost_usd": 0.000911,
+  "passed": false,
+  "checks": [
+    {
+      "name": "required",
+      "passed": false,
+      "detail": "missing not (been |yet )?sent"
+    },
+    {
+      "name": "forbidden",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "dates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "tool_trace",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_leak",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

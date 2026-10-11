@@ -1,0 +1,127 @@
+{
+  "id": "T4",
+  "category": "trap",
+  "repeat": 1,
+  "question": "How many open at-risk orders are there in New York?",
+  "as_of": "2016-06-30",
+  "model": "deepseek-chat",
+  "answer": "As of 2016-06-30, there are **8 open at-risk orders** in New York (order ids 37218, 37220, 37269, 37390, 37391, 37392, 37428, 37414). Six of them are already overdue; the other two are not yet past their promised date.",
+  "stop": "final_answer",
+  "tool_calls": [
+    {
+      "name": "list_at_risk_orders",
+      "arguments": {
+        "state": "New York",
+        "as_of": "2016-06-30"
+      },
+      "duration_ms": 37.0,
+      "ok": true,
+      "error_code": null,
+      "executed": true
+    }
+  ],
+  "tool_results": [
+    {
+      "ok": true,
+      "as_of": "2016-06-30",
+      "data": {
+        "orders": [
+          {
+            "order_id": 37218,
+            "order_date": "2016-06-27",
+            "promised_date": "2016-06-29",
+            "shipping_mode": "Second Class",
+            "state": "New York",
+            "overdue": true
+          },
+          {
+            "order_id": 37220,
+            "order_date": "2016-06-27",
+            "promised_date": "2016-06-29",
+            "shipping_mode": "Second Class",
+            "state": "New York",
+            "overdue": true
+          },
+          {
+            "order_id": 37269,
+            "order_date": "2016-06-28",
+            "promised_date": "2016-06-30",
+            "shipping_mode": "Second Class",
+            "state": "New York",
+            "overdue": true
+          },
+          {
+            "order_id": 37390,
+            "order_date": "2016-06-29",
+            "promised_date": "2016-06-30",
+            "shipping_mode": "First Class",
+            "state": "New York",
+            "overdue": true
+          },
+          {
+            "order_id": 37391,
+            "order_date": "2016-06-29",
+            "promised_date": "2016-06-30",
+            "shipping_mode": "First Class",
+            "state": "New York",
+            "overdue": true
+          },
+          {
+            "order_id": 37392,
+            "order_date": "2016-06-29",
+            "promised_date": "2016-06-30",
+            "shipping_mode": "First Class",
+            "state": "New York",
+            "overdue": true
+          },
+          {
+            "order_id": 37428,
+            "order_date": "2016-06-30",
+            "promised_date": "2016-07-01",
+            "shipping_mode": "First Class",
+            "state": "New York",
+            "overdue": false
+          },
+          {
+            "order_id": 37414,
+            "order_date": "2016-06-30",
+            "promised_date": "2016-07-02",
+            "shipping_mode": "Second Class",
+            "state": "New York",
+            "overdue": false
+          }
+        ],
+        "returned": 8,
+        "total_matching": 8,
+        "truncated": false
+      }
+    }
+  ],
+  "input_tokens": 3407,
+  "output_tokens": 122,
+  "duration_s": 1.716,
+  "cost_usd": 0.001005,
+  "passed": true,
+  "checks": [
+    {
+      "name": "numbers",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "forbidden",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "tool_trace",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_leak",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

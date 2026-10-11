@@ -1,0 +1,10 @@
+data/
+.env
+.venv/
+__pycache__/
+.pytest_cache/
+logs/
+reports/*dryrun*
+reports/transcripts/dryrun_*/
+.idea/
+.DS_Store

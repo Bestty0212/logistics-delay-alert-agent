@@ -1,0 +1,87 @@
+{
+  "id": "A5",
+  "category": "aggregate",
+  "repeat": 1,
+  "question": "How many open at-risk orders are there in Texas?",
+  "as_of": "2016-06-30",
+  "model": "deepseek-chat",
+  "answer": "As of 2016-06-30, there are **3 open at-risk orders** in Texas:\n\n- Order 37235 — promised 2016-06-29 (overdue)\n- Order 37346 — promised 2016-07-01\n- Order 37464 — promised 2016-07-02\n\nAll three are Second Class shipments.",
+  "stop": "final_answer",
+  "tool_calls": [
+    {
+      "name": "list_at_risk_orders",
+      "arguments": {
+        "state": "Texas",
+        "as_of": "2016-06-30"
+      },
+      "duration_ms": 20.1,
+      "ok": true,
+      "error_code": null,
+      "executed": true
+    }
+  ],
+  "tool_results": [
+    {
+      "ok": true,
+      "as_of": "2016-06-30",
+      "data": {
+        "orders": [
+          {
+            "order_id": 37235,
+            "order_date": "2016-06-27",
+            "promised_date": "2016-06-29",
+            "shipping_mode": "Second Class",
+            "state": "Texas",
+            "overdue": true
+          },
+          {
+            "order_id": 37346,
+            "order_date": "2016-06-29",
+            "promised_date": "2016-07-01",
+            "shipping_mode": "Second Class",
+            "state": "Texas",
+            "overdue": false
+          },
+          {
+            "order_id": 37464,
+            "order_date": "2016-06-30",
+            "promised_date": "2016-07-02",
+            "shipping_mode": "Second Class",
+            "state": "Texas",
+            "overdue": false
+          }
+        ],
+        "returned": 3,
+        "total_matching": 3,
+        "truncated": false
+      }
+    }
+  ],
+  "input_tokens": 3139,
+  "output_tokens": 136,
+  "duration_s": 2.105,
+  "cost_usd": 0.000936,
+  "passed": true,
+  "checks": [
+    {
+      "name": "numbers",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "forbidden",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "tool_trace",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_leak",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

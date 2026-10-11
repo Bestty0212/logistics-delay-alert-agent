@@ -1,0 +1,92 @@
+{
+  "id": "R4",
+  "category": "reasoning",
+  "repeat": 1,
+  "question": "Does the high late rate of Second Class orders show that the carrier performs badly?",
+  "as_of": "2016-08-31",
+  "model": "deepseek-chat",
+  "answer": "As of 2016-08-31, the late rates by mode are:\n\n- First Class: 100% (1,219 orders)\n- Second Class: 80.0% (1,563 orders)\n- Same Day: 46.1% (436 orders)\n- Standard Class: 40.3% (4,669 orders)\n\nSecond Class is high, but note that in this dataset delays follow each mode's scheduling pattern — so this is not evidence about real carrier performance, and I can't attribute causes the tools don't show. No mode here is flagged as a small sample.",
+  "stop": "final_answer",
+  "tool_calls": [
+    {
+      "name": "get_shipping_mode_stats",
+      "arguments": {
+        "as_of": "2016-08-31"
+      },
+      "duration_ms": 60.6,
+      "ok": true,
+      "error_code": null,
+      "executed": true
+    }
+  ],
+  "tool_results": [
+    {
+      "ok": true,
+      "as_of": "2016-08-31",
+      "data": {
+        "modes": [
+          {
+            "shipping_mode": "First Class",
+            "completed_orders": 1219,
+            "late_orders": 1219,
+            "late_rate": 1.0,
+            "small_sample": false
+          },
+          {
+            "shipping_mode": "Same Day",
+            "completed_orders": 436,
+            "late_orders": 201,
+            "late_rate": 0.461,
+            "small_sample": false
+          },
+          {
+            "shipping_mode": "Second Class",
+            "completed_orders": 1563,
+            "late_orders": 1250,
+            "late_rate": 0.7997,
+            "small_sample": false
+          },
+          {
+            "shipping_mode": "Standard Class",
+            "completed_orders": 4669,
+            "late_orders": 1881,
+            "late_rate": 0.4029,
+            "small_sample": false
+          }
+        ]
+      }
+    }
+  ],
+  "input_tokens": 3155,
+  "output_tokens": 204,
+  "duration_s": 2.578,
+  "cost_usd": 0.000969,
+  "passed": true,
+  "checks": [
+    {
+      "name": "numbers",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "forbidden",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "tool_trace",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_leak",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

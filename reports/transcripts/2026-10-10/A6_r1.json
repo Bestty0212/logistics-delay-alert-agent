@@ -1,0 +1,88 @@
+{
+  "id": "A6",
+  "category": "aggregate",
+  "repeat": 1,
+  "question": "What is the late rate of Second Class orders in California completed by 2016-06-30?",
+  "as_of": "2016-06-30",
+  "model": "deepseek-chat",
+  "answer": "As of 2016-06-30, Second Class orders in California that were completed have a late rate of 77.4% (151 of 195 orders).",
+  "stop": "final_answer",
+  "tool_calls": [
+    {
+      "name": "get_shipping_mode_stats",
+      "arguments": {
+        "state": "California",
+        "as_of": "2016-06-30"
+      },
+      "duration_ms": 35.8,
+      "ok": true,
+      "error_code": null,
+      "executed": true
+    }
+  ],
+  "tool_results": [
+    {
+      "ok": true,
+      "as_of": "2016-06-30",
+      "data": {
+        "modes": [
+          {
+            "shipping_mode": "First Class",
+            "completed_orders": 143,
+            "late_orders": 143,
+            "late_rate": 1.0,
+            "small_sample": false
+          },
+          {
+            "shipping_mode": "Same Day",
+            "completed_orders": 53,
+            "late_orders": 32,
+            "late_rate": 0.6038,
+            "small_sample": false
+          },
+          {
+            "shipping_mode": "Second Class",
+            "completed_orders": 195,
+            "late_orders": 151,
+            "late_rate": 0.7744,
+            "small_sample": false
+          },
+          {
+            "shipping_mode": "Standard Class",
+            "completed_orders": 540,
+            "late_orders": 203,
+            "late_rate": 0.3759,
+            "small_sample": false
+          }
+        ]
+      }
+    }
+  ],
+  "input_tokens": 3142,
+  "output_tokens": 97,
+  "duration_s": 1.984,
+  "cost_usd": 0.000921,
+  "passed": true,
+  "checks": [
+    {
+      "name": "numbers",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "forbidden",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "tool_trace",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_leak",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

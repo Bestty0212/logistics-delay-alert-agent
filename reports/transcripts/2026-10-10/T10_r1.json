@@ -1,0 +1,76 @@
+{
+  "id": "T10",
+  "category": "trap",
+  "repeat": 1,
+  "question": "What are the delivery status and the late label of order 37065?",
+  "as_of": "2016-06-30",
+  "model": "deepseek-chat",
+  "answer": "As of 2016-06-30, order 37065 (Second Class, Massachusetts):\n\n- **Status:** overdue — promised date was 2016-06-27, and it is still not completed.\n- **Late label:** flagged at risk by the automated check; no further updates are available for this order.\n\nThe timeline shows only two events (order placed 2016-06-25, SLA due 2016-06-27), so I can't tell you anything about its progress beyond that.",
+  "stop": "final_answer",
+  "tool_calls": [
+    {
+      "name": "get_order_timeline",
+      "arguments": {
+        "order_id": 37065,
+        "as_of": "2016-06-30"
+      },
+      "duration_ms": 31.9,
+      "ok": true,
+      "error_code": null,
+      "executed": true
+    }
+  ],
+  "tool_results": [
+    {
+      "ok": true,
+      "as_of": "2016-06-30",
+      "data": {
+        "order_id": 37065,
+        "order_date": "2016-06-25",
+        "shipping_mode": "Second Class",
+        "state": "Massachusetts",
+        "promised_date": "2016-06-27",
+        "at_risk": true,
+        "events": [
+          {
+            "type": "order_placed",
+            "date": "2016-06-25"
+          },
+          {
+            "type": "sla_due",
+            "date": "2016-06-27"
+          }
+        ],
+        "completed_on": null,
+        "status": "overdue"
+      }
+    }
+  ],
+  "input_tokens": 3063,
+  "output_tokens": 156,
+  "duration_s": 2.219,
+  "cost_usd": 0.000923,
+  "passed": true,
+  "checks": [
+    {
+      "name": "required",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "forbidden",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "tool_trace",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_leak",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

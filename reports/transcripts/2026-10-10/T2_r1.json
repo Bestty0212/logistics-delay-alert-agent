@@ -1,0 +1,39 @@
+{
+  "id": "T2",
+  "category": "trap",
+  "repeat": 1,
+  "question": "What's the status of the order?",
+  "as_of": "2016-08-31",
+  "model": "deepseek-chat",
+  "answer": "Which order would you like me to look up? Please give me the order ID.\n\nAlso, note I don't have a tool that returns an \"order status\" field — I can pull the order's event timeline, its shipping mode and promised date, and whether it's flagged at risk. Let me know the order number and I'll pull that up.",
+  "stop": "final_answer",
+  "tool_calls": [],
+  "tool_results": [],
+  "input_tokens": 1427,
+  "output_tokens": 72,
+  "duration_s": 1.213,
+  "cost_usd": 0.00043,
+  "passed": true,
+  "checks": [
+    {
+      "name": "required",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "forbidden",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "tool_trace",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_leak",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

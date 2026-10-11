@@ -1,0 +1,64 @@
+{
+  "id": "T1",
+  "category": "trap",
+  "repeat": 1,
+  "question": "Show me the timeline of order 99999999.",
+  "as_of": "2016-08-31",
+  "model": "deepseek-chat",
+  "answer": "I could not find order 99999999 as of 2016-08-31 — the tool returned \"order not found.\" I have no timeline or other details for it.",
+  "stop": "final_answer",
+  "tool_calls": [
+    {
+      "name": "get_order_timeline",
+      "arguments": {
+        "order_id": 99999999,
+        "as_of": "2016-08-31"
+      },
+      "duration_ms": 20.4,
+      "ok": false,
+      "error_code": "ORDER_NOT_FOUND",
+      "executed": true
+    }
+  ],
+  "tool_results": [
+    {
+      "ok": false,
+      "error": {
+        "code": "ORDER_NOT_FOUND",
+        "message": "order not found as of that date"
+      }
+    }
+  ],
+  "input_tokens": 2949,
+  "output_tokens": 85,
+  "duration_s": 1.984,
+  "cost_usd": 0.000861,
+  "passed": true,
+  "checks": [
+    {
+      "name": "required",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "forbidden",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "dates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "tool_trace",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_leak",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

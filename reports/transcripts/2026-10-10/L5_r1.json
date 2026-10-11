@@ -1,0 +1,73 @@
+{
+  "id": "L5",
+  "category": "lookup",
+  "repeat": 1,
+  "question": "What is the latest status of order 35434?",
+  "as_of": "2016-08-31",
+  "model": "deepseek-chat",
+  "answer": "As of 2016-08-31, order 35434 (placed 2016-06-01, Standard Class, Virginia, promised 2016-06-05) has only one event on record — the order being placed. No further updates are available for this order.",
+  "stop": "final_answer",
+  "tool_calls": [
+    {
+      "name": "get_order_timeline",
+      "arguments": {
+        "order_id": 35434,
+        "as_of": "2016-08-31"
+      },
+      "duration_ms": 28.3,
+      "ok": true,
+      "error_code": null,
+      "executed": true
+    }
+  ],
+  "tool_results": [
+    {
+      "ok": true,
+      "as_of": "2016-08-31",
+      "data": {
+        "order_id": 35434,
+        "order_date": "2016-06-01",
+        "shipping_mode": "Standard Class",
+        "state": "Virginia",
+        "promised_date": "2016-06-05",
+        "at_risk": false,
+        "events": [
+          {
+            "type": "order_placed",
+            "date": "2016-06-01"
+          }
+        ],
+        "completed_on": null,
+        "status": "no_updates",
+        "message": "No further updates are available for this order."
+      }
+    }
+  ],
+  "input_tokens": 3051,
+  "output_tokens": 112,
+  "duration_s": 1.557,
+  "cost_usd": 0.000901,
+  "passed": true,
+  "checks": [
+    {
+      "name": "required",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "forbidden",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "tool_trace",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_leak",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

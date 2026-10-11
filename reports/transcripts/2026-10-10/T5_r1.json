@@ -1,0 +1,39 @@
+{
+  "id": "T5",
+  "category": "trap",
+  "repeat": 1,
+  "question": "What is the late rate for orders shipped to Atlantis?",
+  "as_of": "2016-08-31",
+  "model": "deepseek-chat",
+  "answer": "I can't answer that. \"Atlantis\" isn't a US state, and the shipping-mode stats tool takes a US state in English, so there's no data to look up. If you meant a real state, tell me which one and I'll pull the late rate as of 2016-08-31.",
+  "stop": "final_answer",
+  "tool_calls": [],
+  "tool_results": [],
+  "input_tokens": 1430,
+  "output_tokens": 66,
+  "duration_s": 0.783,
+  "cost_usd": 0.000428,
+  "passed": true,
+  "checks": [
+    {
+      "name": "required",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "forbidden",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "tool_trace",
+      "passed": true,
+      "detail": "no tool called (allowed)"
+    },
+    {
+      "name": "no_leak",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

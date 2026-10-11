@@ -1,0 +1,68 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:16
+        # Throwaway credentials for this CI-only container; not secrets.
+        env:
+          POSTGRES_USER: logistics
+          POSTGRES_PASSWORD: ci_only_owner_password
+          POSTGRES_DB: logistics
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U logistics -d logistics"
+          --health-interval 2s
+          --health-timeout 5s
+          --health-retries 20
+
+    env:
+      POSTGRES_HOST: localhost
+      POSTGRES_PORT: "5432"
+      POSTGRES_USER: logistics
+      POSTGRES_PASSWORD: ci_only_owner_password
+      POSTGRES_DB: logistics
+      AGENT_RO_USER: agent_ro
+      AGENT_RO_PASSWORD: ci_only_agent_ro_password
+      PGHOST: localhost
+      PGPASSWORD: ci_only_owner_password
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Install requirements
+        run: python -m pip install -r requirements.txt
+
+      - name: Create the read-only role and the schema
+        run: |
+          bash db/init-roles.sh
+          psql -v ON_ERROR_STOP=1 -U logistics -d logistics -f db/schema.sql
+
+      - name: Load the synthetic fixture (never the real dataset)
+        run: python scripts/import_data.py --csv tests/fixtures/synthetic_dataco.csv
+
+      - name: Replay events and compute risk flags
+        run: |
+          python scripts/replay_events.py --reset --to 2016-08-31
+          python scripts/evaluate_risk.py --report "$RUNNER_TEMP/risk_eval_ci.md"
+
+      - name: Offline tests (fake model; real-data tests skip themselves)
+        run: python -m pytest -q -rs
+
+      - name: Secret scan (files and git history)
+        run: python scripts/check_secrets.py --git-history

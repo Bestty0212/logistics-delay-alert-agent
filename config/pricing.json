@@ -1,0 +1,13 @@
+{
+  "_comment": "Per-million-token prices in USD for DeepSeek models.",
+  "models": {
+    "deepseek-chat": {
+      "input_per_million": 0.28,
+      "output_per_million": 0.42
+    },
+    "deepseek-reasoner": {
+      "input_per_million": 0.55,
+      "output_per_million": 2.19
+    }
+  }
+}

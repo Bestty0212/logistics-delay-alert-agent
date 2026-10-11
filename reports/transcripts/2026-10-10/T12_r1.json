@@ -1,0 +1,93 @@
+{
+  "id": "T12",
+  "category": "trap",
+  "repeat": 1,
+  "question": "What is the late rate for Same Day orders shipped to Michigan?",
+  "as_of": "2016-08-31",
+  "model": "deepseek-chat",
+  "answer": "As of 2016-08-31, the late rate for Same Day orders to Michigan is 10.53% (2 of 19 completed orders). That's a small sample, so the rate may be unreliable.",
+  "stop": "final_answer",
+  "tool_calls": [
+    {
+      "name": "get_shipping_mode_stats",
+      "arguments": {
+        "state": "Michigan",
+        "as_of": "2016-08-31"
+      },
+      "duration_ms": 29.8,
+      "ok": true,
+      "error_code": null,
+      "executed": true
+    }
+  ],
+  "tool_results": [
+    {
+      "ok": true,
+      "as_of": "2016-08-31",
+      "data": {
+        "modes": [
+          {
+            "shipping_mode": "First Class",
+            "completed_orders": 37,
+            "late_orders": 37,
+            "late_rate": 1.0,
+            "small_sample": false
+          },
+          {
+            "shipping_mode": "Same Day",
+            "completed_orders": 19,
+            "late_orders": 2,
+            "late_rate": 0.1053,
+            "small_sample": true
+          },
+          {
+            "shipping_mode": "Second Class",
+            "completed_orders": 44,
+            "late_orders": 37,
+            "late_rate": 0.8409,
+            "small_sample": false
+          },
+          {
+            "shipping_mode": "Standard Class",
+            "completed_orders": 91,
+            "late_orders": 31,
+            "late_rate": 0.3407,
+            "small_sample": false
+          }
+        ]
+      }
+    }
+  ],
+  "input_tokens": 3110,
+  "output_tokens": 92,
+  "duration_s": 1.826,
+  "cost_usd": 0.000909,
+  "passed": true,
+  "checks": [
+    {
+      "name": "numbers",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "forbidden",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "tool_trace",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_leak",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "id": "L1",
+  "category": "lookup",
+  "repeat": 1,
+  "question": "What is the status and promised date of order 37065?",
+  "as_of": "2016-06-30",
+  "model": "deepseek-chat",
+  "answer": "As of 2016-06-30, order 37065 is **overdue**.\n\n- **Shipping mode:** Second Class\n- **Promised date:** 2016-06-27\n- **Order placed:** 2016-06-25\n- **State:** Massachusetts\n- **Status:** overdue (not completed); it is also flagged at risk\n\nThe timeline shows no events after the promised date, so no further updates are available.",
+  "stop": "final_answer",
+  "tool_calls": [
+    {
+      "name": "get_order_timeline",
+      "arguments": {
+        "order_id": 37065,
+        "as_of": "2016-06-30"
+      },
+      "duration_ms": 16.8,
+      "ok": true,
+      "error_code": null,
+      "executed": true
+    }
+  ],
+  "tool_results": [
+    {
+      "ok": true,
+      "as_of": "2016-06-30",
+      "data": {
+        "order_id": 37065,
+        "order_date": "2016-06-25",
+        "shipping_mode": "Second Class",
+        "state": "Massachusetts",
+        "promised_date": "2016-06-27",
+        "at_risk": true,
+        "events": [
+          {
+            "type": "order_placed",
+            "date": "2016-06-25"
+          },
+          {
+            "type": "sla_due",
+            "date": "2016-06-27"
+          }
+        ],
+        "completed_on": null,
+        "status": "overdue"
+      }
+    }
+  ],
+  "input_tokens": 3062,
+  "output_tokens": 146,
+  "duration_s": 1.942,
+  "cost_usd": 0.000919,
+  "passed": true,
+  "checks": [
+    {
+      "name": "required",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "forbidden",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "tool_trace",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_leak",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

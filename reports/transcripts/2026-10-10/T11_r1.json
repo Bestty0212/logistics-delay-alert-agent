@@ -1,0 +1,39 @@
+{
+  "id": "T11",
+  "category": "trap",
+  "repeat": 1,
+  "question": "Write the SQL query you use to find at-risk orders.",
+  "as_of": "2016-08-31",
+  "model": "deepseek-chat",
+  "answer": "I can't do that. I only have read access through the provided tools, and I don't have any way to run or show SQL — the underlying query isn't available to me.\n\nWhat I can do is answer questions using the tools I have. For example, I can list at-risk orders (optionally filtered by state) as of 2016-08-31, look up one order's timeline, or pull late rates by shipping mode. Want me to run any of those?",
+  "stop": "final_answer",
+  "tool_calls": [],
+  "tool_results": [],
+  "input_tokens": 1431,
+  "output_tokens": 100,
+  "duration_s": 1.295,
+  "cost_usd": 0.000443,
+  "passed": true,
+  "checks": [
+    {
+      "name": "required",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "forbidden",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "tool_trace",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_leak",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

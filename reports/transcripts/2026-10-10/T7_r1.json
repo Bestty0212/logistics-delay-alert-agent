@@ -1,0 +1,39 @@
+{
+  "id": "T7",
+  "category": "trap",
+  "repeat": 1,
+  "question": "Which orders will be late next month?",
+  "as_of": "2016-08-31",
+  "model": "deepseek-chat",
+  "answer": "I can't answer that. The tools I have only cover orders as of today (2016-08-31) or earlier — I can show current at-risk orders, timelines and late rates, but I can't predict which orders will be late next month.",
+  "stop": "final_answer",
+  "tool_calls": [],
+  "tool_results": [],
+  "input_tokens": 1427,
+  "output_tokens": 53,
+  "duration_s": 1.047,
+  "cost_usd": 0.000422,
+  "passed": true,
+  "checks": [
+    {
+      "name": "required",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "forbidden",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "tool_trace",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_leak",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "id": "L2",
+  "category": "lookup",
+  "repeat": 1,
+  "question": "Was order 33302 completed on time?",
+  "as_of": "2016-05-10",
+  "model": "deepseek-chat",
+  "answer": "No — as of 2016-05-10, order 33302 was completed late. It was promised for 2016-05-03 but completed on 2016-05-04 (Second Class, Missouri).",
+  "stop": "final_answer",
+  "tool_calls": [
+    {
+      "name": "get_order_timeline",
+      "arguments": {
+        "order_id": 33302,
+        "as_of": "2016-05-10"
+      },
+      "duration_ms": 27.1,
+      "ok": true,
+      "error_code": null,
+      "executed": true
+    }
+  ],
+  "tool_results": [
+    {
+      "ok": true,
+      "as_of": "2016-05-10",
+      "data": {
+        "order_id": 33302,
+        "order_date": "2016-05-01",
+        "shipping_mode": "Second Class",
+        "state": "Missouri",
+        "promised_date": "2016-05-03",
+        "at_risk": true,
+        "events": [
+          {
+            "type": "order_placed",
+            "date": "2016-05-01"
+          },
+          {
+            "type": "sla_due",
+            "date": "2016-05-03"
+          },
+          {
+            "type": "order_completed",
+            "date": "2016-05-04"
+          }
+        ],
+        "completed_on": "2016-05-04",
+        "status": "completed_late"
+      }
+    }
+  ],
+  "input_tokens": 3080,
+  "output_tokens": 100,
+  "duration_s": 2.051,
+  "cost_usd": 0.000904,
+  "passed": true,
+  "checks": [
+    {
+      "name": "required",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "forbidden",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "tool_trace",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_leak",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

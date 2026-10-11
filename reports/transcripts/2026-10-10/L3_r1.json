@@ -1,0 +1,80 @@
+{
+  "id": "L3",
+  "category": "lookup",
+  "repeat": 1,
+  "question": "When was order 33927 completed, and was it on time?",
+  "as_of": "2016-05-20",
+  "model": "deepseek-chat",
+  "answer": "As of 2016-05-20: order 33927 was completed on 2016-05-13, and it was on time — ahead of its promised date of 2016-05-14 (Standard Class, Oklahoma).",
+  "stop": "final_answer",
+  "tool_calls": [
+    {
+      "name": "get_order_timeline",
+      "arguments": {
+        "order_id": 33927,
+        "as_of": "2016-05-20"
+      },
+      "duration_ms": 38.6,
+      "ok": true,
+      "error_code": null,
+      "executed": true
+    }
+  ],
+  "tool_results": [
+    {
+      "ok": true,
+      "as_of": "2016-05-20",
+      "data": {
+        "order_id": 33927,
+        "order_date": "2016-05-10",
+        "shipping_mode": "Standard Class",
+        "state": "Oklahoma",
+        "promised_date": "2016-05-14",
+        "at_risk": false,
+        "events": [
+          {
+            "type": "order_placed",
+            "date": "2016-05-10"
+          },
+          {
+            "type": "order_completed",
+            "date": "2016-05-13"
+          },
+          {
+            "type": "sla_due",
+            "date": "2016-05-14"
+          }
+        ],
+        "completed_on": "2016-05-13",
+        "status": "completed_on_time"
+      }
+    }
+  ],
+  "input_tokens": 3087,
+  "output_tokens": 100,
+  "duration_s": 2.286,
+  "cost_usd": 0.000906,
+  "passed": true,
+  "checks": [
+    {
+      "name": "required",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "forbidden",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "tool_trace",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_leak",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

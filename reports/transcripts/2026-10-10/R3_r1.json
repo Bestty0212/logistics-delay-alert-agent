@@ -1,0 +1,76 @@
+{
+  "id": "R3",
+  "category": "reasoning",
+  "repeat": 1,
+  "question": "Why was order 37065 flagged as at risk?",
+  "as_of": "2016-06-30",
+  "model": "deepseek-chat",
+  "answer": "I can't explain why the automated check flagged it — that logic isn't something I can describe or infer.\n\nWhat the timeline does show as of 2016-06-30:\n\n- Order 37065, placed 2016-06-25, Second Class, Massachusetts\n- Promised date: 2016-06-27\n- Status: overdue, not completed; no further updates are available after the SLA due event\n\nSo it's flagged at risk and currently past its promised date. Want me to draft a customer notification for it?",
+  "stop": "final_answer",
+  "tool_calls": [
+    {
+      "name": "get_order_timeline",
+      "arguments": {
+        "order_id": 37065,
+        "as_of": "2016-06-30"
+      },
+      "duration_ms": 48.6,
+      "ok": true,
+      "error_code": null,
+      "executed": true
+    }
+  ],
+  "tool_results": [
+    {
+      "ok": true,
+      "as_of": "2016-06-30",
+      "data": {
+        "order_id": 37065,
+        "order_date": "2016-06-25",
+        "shipping_mode": "Second Class",
+        "state": "Massachusetts",
+        "promised_date": "2016-06-27",
+        "at_risk": true,
+        "events": [
+          {
+            "type": "order_placed",
+            "date": "2016-06-25"
+          },
+          {
+            "type": "sla_due",
+            "date": "2016-06-27"
+          }
+        ],
+        "completed_on": null,
+        "status": "overdue"
+      }
+    }
+  ],
+  "input_tokens": 3087,
+  "output_tokens": 194,
+  "duration_s": 2.358,
+  "cost_usd": 0.000946,
+  "passed": true,
+  "checks": [
+    {
+      "name": "required",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "forbidden",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "tool_trace",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_leak",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

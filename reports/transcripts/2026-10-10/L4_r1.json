@@ -1,0 +1,72 @@
+{
+  "id": "L4",
+  "category": "lookup",
+  "repeat": 1,
+  "question": "Is order 37270 overdue?",
+  "as_of": "2016-06-30",
+  "model": "deepseek-chat",
+  "answer": "No — as of 2016-06-30, order 37270 is not overdue. It's still open, with a promised date of 2016-07-02, and it is not flagged at risk. The only event so far is that the order was placed on 2016-06-28.",
+  "stop": "final_answer",
+  "tool_calls": [
+    {
+      "name": "get_order_timeline",
+      "arguments": {
+        "order_id": 37270,
+        "as_of": "2016-06-30"
+      },
+      "duration_ms": 24.9,
+      "ok": true,
+      "error_code": null,
+      "executed": true
+    }
+  ],
+  "tool_results": [
+    {
+      "ok": true,
+      "as_of": "2016-06-30",
+      "data": {
+        "order_id": 37270,
+        "order_date": "2016-06-28",
+        "shipping_mode": "Standard Class",
+        "state": "New York",
+        "promised_date": "2016-07-02",
+        "at_risk": false,
+        "events": [
+          {
+            "type": "order_placed",
+            "date": "2016-06-28"
+          }
+        ],
+        "completed_on": null,
+        "status": "open"
+      }
+    }
+  ],
+  "input_tokens": 3018,
+  "output_tokens": 108,
+  "duration_s": 1.887,
+  "cost_usd": 0.00089,
+  "passed": true,
+  "checks": [
+    {
+      "name": "required",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "forbidden",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "tool_trace",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_leak",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}
